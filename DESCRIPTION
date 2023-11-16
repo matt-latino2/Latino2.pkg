@@ -1,5 +1,5 @@
 Package: Latino.pkg
-Title: An R package for processing ________ data
+Title: An R package explaining the relationship of variables in our Rodents surveys dataset.
 Version: 1.0.0
 Authors@R: c(
   person(given = "Matthew",
@@ -7,11 +7,11 @@ Authors@R: c(
           role = c("cre", "aut"),
           email = "matthew.latino-2@selu.edu")
           )
-Description: An R package to process ________ data. Most functions accept numerical input and allow users to calculate a variety of data to understand ________ in their ecosystems. 
+Description: An R package to process rodent data. Most functions accept numerical input and allow users to calculate a variety of data to understand rodents characteristics.
 License: MIT + file LICENSE
 Depends:
   R (>= 2.10)
-Imports:
+Imports: 
   tidyverse, broom 
 RoxygenNote: 7.2.3
 Suggests: 
