@@ -81,13 +81,80 @@ Latino</h4>
 
     
     
-<p>My R package is the cooliest. It shows data collected about rodents.
-My friend Cade is working with me and we make quite a dynamic duo.</p>
+<div class="section level2">
+<h2 id="introduction-to-my-r-package-for-proccessing-rodent-data">Introduction to My R Package for Proccessing Rodent Data<a class="anchor" aria-label="anchor" href="#introduction-to-my-r-package-for-proccessing-rodent-data"></a>
+</h2>
+<p>This R package helps user work with functions to process and analyze
+rodent data. The functions used include clearing non applicable data
+from dataset, generate grahp plots, gives statistical Manova analysis,
+deviates numerical values, and records number of rodents present at each
+plot. Also, user can input different data columns of your choice to
+retrieve the desired analytical information as needed.</p>
+</div>
+<div class="section level2">
+<h2 id="installing-r-package-for-rodent-data">Installing R Package for Rodent Data<a class="anchor" aria-label="anchor" href="#installing-r-package-for-rodent-data"></a>
+</h2>
+<p>To install the R Package, copy and paste the following code into the
+console.</p>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"matt-latino2/Latino2.pkg"</span><span class="op">)</span></span></code></pre></div>
+<pre><code><span><span class="co">## Using github PAT from envvar GITHUB_PAT</span></span></code></pre>
+<pre><code><span><span class="co">## Downloading GitHub repo matt-latino2/Latino2.pkg@HEAD</span></span></code></pre>
+<pre><code><span><span class="co">## stringi (1.7.12 -&gt; 1.8.1) [CRAN]</span></span>
+<span><span class="co">## stringr (1.5.0  -&gt; 1.5.1) [CRAN]</span></span>
+<span><span class="co">## dplyr   (1.1.3  -&gt; 1.1.4) [CRAN]</span></span></code></pre>
+<pre><code><span><span class="co">## Installing 3 packages: stringi, stringr, dplyr</span></span></code></pre>
+<pre><code><span><span class="co">## Installing packages into '/tmp/Rtmp6rKfTd/temp_libpath13022c20afa'</span></span>
+<span><span class="co">## (as 'lib' is unspecified)</span></span></code></pre>
+<pre><code><span><span class="co">## <span style="color: #00BBBB;">──</span> <span style="color: #00BBBB;">R CMD build</span> <span style="color: #00BBBB;">─────────────────────────────────────────────────────────────────</span></span></span>
+<span><span class="co">## * checking for file ‘/tmp/RtmpyudGCr/remotes44d744ebbd8/matt-latino2-Latino2.pkg-95952ff/DESCRIPTION’ ... OK</span></span>
+<span><span class="co">## * preparing ‘Latino.pkg’:</span></span>
+<span><span class="co">## * checking DESCRIPTION meta-information ... OK</span></span>
+<span><span class="co">## * checking for LF line-endings in source and make files and shell scripts</span></span>
+<span><span class="co">## * checking for empty or unneeded directories</span></span>
+<span><span class="co">## * building ‘Latino.pkg_1.0.0.tar.gz’</span></span>
+<span><span class="co">## Warning: invalid uid value replaced by that for user 'nobody'</span></span></code></pre>
+<pre><code><span><span class="co">## Installing package into '/tmp/Rtmp6rKfTd/temp_libpath13022c20afa'</span></span>
+<span><span class="co">## (as 'lib' is unspecified)</span></span></code></pre>
+<pre><code><span><span class="co">## Warning in i.p(...): installation of package</span></span>
+<span><span class="co">## '/tmp/RtmpyudGCr/file44d76538a1d/Latino.pkg_1.0.0.tar.gz' had non-zero exit</span></span>
+<span><span class="co">## status</span></span></code></pre>
+</div>
+<div class="section level2">
+<h2 id="other-packages-to-install">Other packages to install:<a class="anchor" aria-label="anchor" href="#other-packages-to-install"></a>
+</h2>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"tidyverse"</span><span class="op">)</span></span></code></pre></div>
+<pre><code><span><span class="co">## Installing package into '/tmp/Rtmp6rKfTd/temp_libpath13022c20afa'</span></span>
+<span><span class="co">## (as 'lib' is unspecified)</span></span></code></pre>
+</div>
+<div class="section level2">
+<h2 id="how-to-download-surveys-data-for-r-package">How to Download Surveys Data for R Package<a class="anchor" aria-label="anchor" href="#how-to-download-surveys-data-for-r-package"></a>
+</h2>
+<p>To download your data, click on the upload button in the “Files” tab
+in your R window. After, select the .csv file that contains the rodent
+surveys data set. To make the data functional in R, copy and paste the
+following codes individually into your console.</p>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co">#install.packages("googlesheets4")</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://googlesheets4.tidyverse.org" class="external-link">googlesheets4</a></span><span class="op">)</span></span>
+<span><span class="fu">googlesheets4</span><span class="fu">::</span><span class="fu"><a href="https://googlesheets4.tidyverse.org/reference/gs4_deauth.html" class="external-link">gs4_deauth</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="va">surveys</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://googlesheets4.tidyverse.org/reference/range_read.html" class="external-link">read_sheet</a></span><span class="op">(</span><span class="st">"https://docs.google.com/spreadsheets/d/1Pdc36LWryPtNrOrr2WudfGebYUtGLoOVuiZTu4jIs-4/edit?usp=sharing"</span><span class="op">)</span></span></code></pre></div>
+<p>##Omitting NA Values from Data Set</p>
+<p>The first function allows the user eliminate the non applicable
+values from the dataset to visualize and analyze the data with complete
+data values</p>
+<p>##Graphing Relationships between Data</p>
+<p>The second function creates a graphing plot using selected variables
+of</p>
+</div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
 
-      </div>
+        <nav id="toc" data-toggle="toc"><h2 data-toc-skip>Contents</h2>
+    </nav>
+</div>
 
 </div>
 
