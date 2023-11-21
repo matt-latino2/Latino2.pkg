@@ -7,7 +7,7 @@ Authors@R: c(
           role = c("cre", "aut"),
           email = "matthew.latino-2@selu.edu")
           )
-Description: An R package to process rodent data. Most functions accept numerical input and allow users to calculate a variety of data to understand rodents characteristics.
+Description: An R package to process rodent data. Most functions accept numerical input and allow users to calculate a variety of data to understand rodents characteristics and relationships between data values.
 License: MIT + file LICENSE
 Depends:
   R (>= 2.10)
