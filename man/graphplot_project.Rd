@@ -12,9 +12,9 @@ graphplot_project(data, sex, hindfoot_length)
 \item{hindfoot_length}{Hindfoot length of rodents}
 }
 \value{
-returns graph plot between sex and hindfoot length
+Returns gpp as graph plot between sex and hindfoot length
 }
 \description{
-Use sex and hindfoot length from surveys dataset
-Returns graph plot for sex versus hindfoot length
+use sex and hindfoot length from surveys dataset to determine relationship
+Returns graphplot for sex versus hindfoot length
 }
