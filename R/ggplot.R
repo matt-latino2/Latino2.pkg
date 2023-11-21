@@ -1,13 +1,14 @@
 #' Graph relationship between sex and hindfoot length
 #' 
-#' Use sex and hindfoot length from surveys dataset
-#' Returns graph plot for sex versus hindfoot length
+#' use sex and hindfoot length from surveys dataset to determine relationship
+#' Returns graphplot for sex versus hindfoot length
 #' 
 #' @param sex Sex of rodents
 #' @param hindfoot_length Hindfoot length of rodents
-#' @return returns graph plot between sex and hindfoot length
+#' @return Returns gpp as graph plot between sex and hindfoot length
 #' 
 #' @export
+
 
 
 
