@@ -11,9 +11,9 @@
 
 
 stddev_project <- function(surveys, species_id, weight){
-weight_sd <- surveys %>% 
-na.omit() %>% 
-group_by(species_id) %>% 
-summarize(mean = mean(weight), standard_deviation = sd(weight))
-return(weight_sd)
+  weight_sd <- surveys %>% 
+    na.omit() %>% 
+    group_by(species_id) %>% 
+    summarize(mean = mean(weight), standard_deviation = sd(weight))
+  return(weight_sd)
 }

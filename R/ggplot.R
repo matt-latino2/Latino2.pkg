@@ -14,6 +14,6 @@
 
 
 graphplot_project <- function(data, sex, hindfoot_length){
-  gpp <- ggplot(data = data, mapping = aes(x = sex, y = hindfoot_length)) + geom_col() 
+  gpp <- ggplot(data=surveys, mapping = aes(x = sex, y = hindfoot_length)) + geom_point(alpha = 0.1, aes(color = species_id))
   return(gpp)
 }
