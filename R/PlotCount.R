@@ -9,7 +9,7 @@
 #' @export
 
 
-plot_count_project <- function(surveys), plot_type){
+plot_count_project <- function(surveys, plot_type){
 plot_count <- surveys %>% 
 na.omit() %>% 
 count(plot_type) %>% 
