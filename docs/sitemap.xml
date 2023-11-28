@@ -28,10 +28,19 @@
     <loc>/reference/manova_model.html</loc>
   </url>
   <url>
+    <loc>/reference/manova_project.html</loc>
+  </url>
+  <url>
     <loc>/reference/plot_count.html</loc>
   </url>
   <url>
+    <loc>/reference/plot_count_project.html</loc>
+  </url>
+  <url>
     <loc>/reference/remove_nas.html</loc>
+  </url>
+  <url>
+    <loc>/reference/stddev_project.html</loc>
   </url>
   <url>
     <loc>/reference/weight_sd.html</loc>
