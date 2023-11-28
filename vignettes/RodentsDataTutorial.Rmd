@@ -9,4 +9,105 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-My R package is the cooliest. It shows data collected about rodents. My friend Cade is working with me and we make quite a dynamic duo. 
+## Introduction to My R Package for Proccessing Rodent Data
+
+This R package helps user work with functions to process and analyze rodent data.
+The functions used include clearing non applicable data from dataset, generate grahp plots, gives statistical Manova analysis, deviates numerical values, and records number of rodents present at each plot. Also, user can input different data columns of your choice to retrieve the desired analytical information as needed. 
+
+## Installing R Package for Rodent Data
+
+To install the R Package, copy and paste the following code into the console.
+
+
+```{r}
+devtools::install_github("matt-latino2/Latino2.pkg")
+```
+
+## Other packages to install:
+
+```{r}
+install.packages("tidyverse")
+```
+
+## How to Download Surveys Data for R Package 
+
+To download your data, click on the upload button in the "Files" tab in your R window. After, select the .csv file that contains the rodent surveys data set. To make the data functional in R, copy and paste the following codes individually into your console.
+
+```{r, eval=FALSE}
+#install.packages("googlesheets4")
+library(googlesheets4)
+googlesheets4::gs4_deauth()
+surveys <- read_sheet("https://docs.google.com/spreadsheets/d/1Pdc36LWryPtNrOrr2WudfGebYUtGLoOVuiZTu4jIs-4/edit?usp=sharing")
+```
+
+##Functions In This Package and How To Use Them
+
+Available in this package are five functions.In this section, we will get to see each function and go through how and why you might use them.
+
+##Cleaning Irrelevent Data
+
+This function is an omitting data function.The function's goal is to remove any unnecessary values, which in this case, this function removes NA values. Before using a function, the purpose of clearing data from a data set is important because NA values can be read as a ZERO value. Hence, any further calculations may contain false information about your recorded data.
+
+```{r}
+remove_nas <- function(surveys, hindfoot_length){
+  rodents <- surveys %>% 
+    na.omit(surveys) %>% 
+    select(hindfoot_length)
+  if(is.numeric(surveys$hindfoot_length) == TRUE){
+    return(rodents)
+  }else{
+    print("error")
+ }
+}
+```
+
+##Graphing Data
+
+In our second function, we have a function that makes a graph plot. A graphing function is useful in constructing a comparative analysis between two columns of data. The function below evaluates the difference in hindfoot length between the opposite sex. This functions looks at how size might differ between rodents and if it may propose an advantage.
+
+```{r}
+graphplot_project <- function(surveys, sex, hindfoot_length){
+  gpp <- ggplot(data=surveys, mapping = aes(x = sex, y = hindfoot_length)) + geom_point(alpha = 0.1, aes(color = species_id))
+}
+```
+
+##Count Plot Type
+
+Below is a count function. In this function, the main goal is to see which plot type saw the most activity from rodents.
+
+```{r}
+plot_count_project <- function(surveys, plot_type){
+plot_count <- surveys %>% 
+na.omit() %>% 
+count(plot_type) %>% 
+return(plot_count)
+}
+```
+
+##Statisticall Function: Manova
+
+In our next function, we will use Manova, which is a statistical analysis. A Manova analysis evaluates the correlation between the independent variablev and what ways does it change the dependent variable.
+
+```{r}
+manova_project <- function(surveys, weight, sex, hindfoot_length){
+manova_model <- manova(cbind(weight, hindfoot_length) ~ sex, surveys)
+manova_model
+summary(manova_model)
+return(manova_model)
+}
+```
+
+##Tranforming Data Using Standard Deviation
+
+Our final function uses standard deviation as a way to transform data into a numerical value. Standard deviation looks at the data set as a whole and determines where in relation the data is in proximity to the mean of selected data columns. Essentially, it is the measure of the dispersion of data whether it be high or low dispersion.
+
+```{r}
+stddev_project <- function(surveys, species_id, weight){
+weight_sd <- surveys %>% 
+na.omit() %>% 
+group_by(species_id) %>% 
+summarize(mean = mean(weight), standard_deviation = sd(weight))
+return(weight_sd)
+}
+```
+
