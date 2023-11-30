@@ -60,7 +60,12 @@ remove_nas <- function(surveys, hindfoot_length){
  }
 }
 ```
+After function has been plugged into the console, input the command down below.
 
+```{r}
+remove_nas(surveys, "hindfoot_length")
+```
+ 
 ##Graphing Data
 
 In our second function, we have a function that makes a graph plot. A graphing function is useful in constructing a comparative analysis between two columns of data. The function below evaluates the difference in hindfoot length between the opposite sex. This functions looks at how size might differ between rodents and if it may propose an advantage.
@@ -68,7 +73,14 @@ In our second function, we have a function that makes a graph plot. A graphing f
 ```{r}
 graphplot_project <- function(surveys, sex, hindfoot_length){
   gpp <- ggplot(data=surveys, mapping = aes(x = sex, y = hindfoot_length)) + geom_point(alpha = 0.1, aes(color = species_id))
+  return(gpp)
 }
+```
+
+After plugging in the function, enter the following command into your console.
+
+```{r}
+graphplot_project(surveys, "sex", "hindfoot_length")
 ```
 
 ##Count Plot Type
@@ -84,6 +96,12 @@ return(plot_count)
 }
 ```
 
+Enter the following command after plugging in the function.
+
+```{r}
+plot_count_project(surveys, "plot_type")
+```
+
 ##Statisticall Function: Manova
 
 In our next function, we will use Manova, which is a statistical analysis. A Manova analysis evaluates the correlation between the independent variablev and what ways does it change the dependent variable.
@@ -95,6 +113,12 @@ manova_model
 summary(manova_model)
 return(manova_model)
 }
+```
+
+after the function above has been plugged in, input the following command.
+
+```{r}
+manova_project(surveys, "weight", "sex", "hindfoot_length")
 ```
 
 ##Tranforming Data Using Standard Deviation
@@ -111,3 +135,8 @@ return(weight_sd)
 }
 ```
 
+Plug the following command into the console after inputting the above function.
+
+```{r}
+stddev_project(surveys, "species_id", "weight")
+```
